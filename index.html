@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Study Planner </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+   
+
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <h1>Neural Study Hub</h1>
+                <p class="header-subtitle">Optimize your cognitive function with AI-assisted learning patterns</p>
+            </div>
+            <div class="header-right">
+                <div class="clock" id="clock">00:00:00</div>
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+            </div>
+        </header>
+
+        <div class="progress-container">
+            <label>Neural Learning Progress</label>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+            </div>
+            <div class="progress-stats">
+                <span id="completedCount">0 completed</span>
+                <span id="totalCount">0 total</span>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <form id="taskForm">
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="subject">Knowledge Domain</label>
+                        <input type="text" id="subject" required placeholder="Enter study domain">
+                    </div>
+                    <div class="input-group">
+                        <label for="dueDate">Temporal Deadline</label>
+                        <input type="datetime-local" id="dueDate">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="description">Learning Parameters</label>
+                    <textarea id="description" placeholder="Define your study objectives and key concepts"></textarea>
+                </div>
+                <div class="buttons">
+                    <button type="reset" class="btn btn-secondary">Reset Fields</button>
+                    <button type="submit" class="btn btn-primary">Generate Task</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All Nodes</button>
+            <button class="filter-btn" data-filter="today">Today's Focus</button>
+            <button class="filter-btn" data-filter="upcoming">Future Queue</button>
+            <button class="filter-btn" data-filter="completed">Processed</button>
+        </div>
+
+        <div class="tasks-container" id="tasksContainer">
+            <!-- Tasks will be dynamically added here -->
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
